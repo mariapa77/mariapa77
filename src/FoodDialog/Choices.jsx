@@ -8,11 +8,11 @@ ${CursorPointer}
 
 `;
 
-const label = styled.label`
+const Label = styled.label`
 ${CursorPointer}
 `;
 
-export function choices({openFood, choiceRadio}) {
+export function Choices({openFood, choiceRadio}) {
     return (
         <>
         <h3>Choose one</h3>
@@ -26,7 +26,7 @@ export function choices({openFood, choiceRadio}) {
         checked={choiceRadio.value === choice}
         onChange={choiceRadio.onChange}
         />
-        <label for={choice}> {choice} </label>{" "}
+        <Label for={choice}> {choice} </Label>{" "}
         </>
     ))}
   </>

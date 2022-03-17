@@ -1,6 +1,6 @@
 import React,{useState} from "react";
-//import { collection,getDocs } from "firebase/firestore/lite";
-//import { dbConfig } from "./config/firebase";
+//import { collection,getDocs } from "firebase/firestore/lite";//
+//import { dbConfig } from "./config/firebase";//
 import { Navbar } from "./Navbar/Navbar";
 import { Banner } from "./Banner/Banner";
 import { Menu } from "./Menu/Menu";
@@ -14,11 +14,15 @@ import {useAuthetication}from"./Hooks/useAuthentication";
 import {OrderDialog} from "./Order/OrderDialog";
 import {useOrderDialog} from "./Hooks/useOrderDialog";
 
+
+
 function App() {
   const openFood= UseOpenFood();
   const  orders = useOrders();
   const auth = useAuthetication();
-  const OrderDialog = useOrderDialog();
+  const orderDialog = useOrderDialog();
+
+
 
   useTitle({...openFood, ...orders});
 
@@ -26,13 +30,15 @@ function App() {
     <>
      
     <GlobalStyle/>
-    <OrderDialog {...OrderDialog} {...Order}/>
+    <OrderDialog {...orderDialog} {...orders} />
 
     <FoodDialog {...openFood}  {...orders}/>
     <Navbar {...auth} />
-    <Order {...orders} {...openFood} {...auth} {...OrderDialog} />
+    <Order {...orders} {...openFood} {...auth} {...orderDialog} />
     <Banner/>
     <Menu {...openFood} />
+    
+    
    </>
     
    

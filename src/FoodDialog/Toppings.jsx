@@ -14,25 +14,25 @@ cursor:pointer;
 
 `;
 
-const checkboxLabel = styled.label`
+const CheckboxLabel = styled.label`
 cursor:pointer;
 
 `;
 
-export function toppings({toppings, checkTopping}){
+export function Toppings({toppings, checkTopping}){
     return (
         <ToppingGrid>
-            {toppings.map((toppings,i) => (
-            <checkboxLabel>
+            {toppings.map((topping,i) => (
+            <CheckboxLabel>
              <ToppingCheckbox
               type="checkbox"
-              checked= {toppings.checked}
+              checked= {topping.checked}
               onClick={()=>{
                  checkTopping(i);
              }}
              />
-             {toppings.name}   
-            </checkboxLabel>
+             {topping.name}   
+            </CheckboxLabel>
             ))}
         </ToppingGrid>
     );

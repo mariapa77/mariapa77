@@ -1,7 +1,7 @@
 import React from "react";
 import {Dialog, DialogContent, DialogShadow, DialogFooter, ConfirmButton}from "../FoodDialog/FoodDialog";
 
-export function OrderDialog({openOrderDialog, setopenOrderDialog, setOrders}){
+export function OrderDialog({openOrderDialog, setOpenOrderDialog, setOrders}){
     return  openOrderDialog ? <>
     <DialogShadow/>
     <Dialog>
@@ -12,7 +12,7 @@ export function OrderDialog({openOrderDialog, setopenOrderDialog, setOrders}){
         <DialogFooter>
             <ConfirmButton onClick={() => {
             setOrders([]);
-            setopenOrderDialog();
+            setOpenOrderDialog();
             }}>
                 I'm still hungrey
             </ConfirmButton>

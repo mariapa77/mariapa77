@@ -6,9 +6,10 @@ import { Title } from "../styles/title";
 import { formatPrice } from "../Data/FoodData";
 import { QuantityInput } from "./QuantityInput";
 import { useQuantity } from "../Hooks/useQuantity";
+import { Toppings } from "./Toppings";
 import { useToppings } from "../Hooks/UseTopping";
 import { useChoice } from "../Hooks/useChoices";
-import {choices} from "./Choices";
+import {Choices} from "./Choices";
 
 export const Dialog = styled.div`
 width:500px;
@@ -110,7 +111,7 @@ function hasTopping(food) {
 
     function editOrder ( ) {
         const newOrders = [...order];
-        newOrders[order.index]= order;
+        newOrders[openFood.index]= order;
         setOrders(newOrders);
         close();
     };
@@ -136,11 +137,11 @@ function hasTopping(food) {
          {hasTopping (openFood) && (
              <>
              <h3>Would you like toppings? </h3>
-             <toppings {...toppings} />
+             <Toppings {...toppings} />
              </> 
          )}
         {openFood.choices && (
-        <choices openFood={openFood} {...choiceRadio} />
+        <Choices openFood={openFood} {...choiceRadio} />
         )}
      </DialogContent>
      <DialogFooter>

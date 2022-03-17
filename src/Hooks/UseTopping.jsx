@@ -29,8 +29,8 @@ const toppingsList=[
 
 
 function getDeFaultToppings () {
-return toppingsList.map(toppings => ({
-    name:toppings,
+return toppingsList.map(topping => ({
+    name:topping,
     check:false
 
 }));
